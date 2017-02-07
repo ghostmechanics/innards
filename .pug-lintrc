@@ -1,0 +1,16 @@
+{
+    "disallowLegacyMixinCall": true,
+    "disallowMultipleLineBreaks": true,
+    "disallowSpacesInsideAttributeBrackets": true,
+    "disallowSpecificTags": ["b", "i"],
+    "requireClassLiteralsBeforeAttributes": true,
+    "requireLowerCaseAttributes": true,
+    "requireLowerCaseTags": true,
+    "requireSpecificAttributes": [{
+        "img": [ "alt", "title" ]
+    }],
+    "requireStrictEqualityOperators": true,
+    "validateAttributeQuoteMarks": "\"",
+    "validateExtensions": true,
+    "validateIndentation": 2
+}
