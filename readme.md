@@ -2,7 +2,7 @@
 
 Get your bones up and running.
 
-![](skeleton.gif)
+![](skeletons.gif)
 
 ```bash
 $ npm i
