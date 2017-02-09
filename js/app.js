@@ -1,4 +1,4 @@
-// Have some boilerplate
+// Here, have some boilerplate
 
 'use strict';
 
@@ -6,7 +6,7 @@ const constants = require('./constants');
 const app = {};
 
 app.init = function init() {
-    console.info('app has been initialized. here it is:', app, constants);
+    console.info('Your app has been initialized. Here it is:', app, constants);
 };
 
 app.init();

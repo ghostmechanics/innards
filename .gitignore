@@ -1,0 +1,13 @@
+.*
+.DS_Store
+!.editorconfig
+!.eslintignore
+!.eslintrc
+!.gitignore
+!.npmrc
+!.pug-lintrc
+!.stylintrc
+*.log
+css/styles.css
+dist/js/bundle.js
+node_modules
