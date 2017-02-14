@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "blankie": "2.0.0",
+    "concurrently": "3.3.0",
     "glue": "4.0.0",
     "hapi": "16.1.0",
     "hapi-pino": "1.3.0",
@@ -47,7 +48,8 @@
     "debug": "./node_modules/.bin/devtool server.js",
     "lint": "./node_modules/.bin/eslint ./js --cache",
     "rebuild": "npm run clean && npm run build",
-    "start": "node ./server.js"
+    "start": "node ./server.js",
+    "start-build": "./node_modules/.bin/concurrently -p '[{name}]' -n 'START, BUILD' 'npm start' 'npm run build' -c 'bgBlue.bold,bgGreen.bold'"
   },
   "author": "John Michel <johnmichel@gmail.com>",
   "license": "MIT"
