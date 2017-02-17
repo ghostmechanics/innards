@@ -8,8 +8,6 @@
     "parserOptions": {
         "ecmaVersion": 6
     },
-
-    # STOPPED AT http://eslint.org/docs/rules/#stylistic-issues
     "rules": {
         "accessor-pairs": 2,
         "array-bracket-spacing": [2, "never"],
@@ -128,6 +126,7 @@
         "no-mixed-operators": 0,
         "no-mixed-requires": 2,
         "no-mixed-spaces-and-tabs": 2,
+        "no-multi-assign": 2,
         "no-multi-spaces": 2,
         "no-multi-str": 2,
         "no-multiple-empty-lines": 2,
@@ -208,7 +207,9 @@
         "padded-blocks": [2, "never"],
         "prefer-arrow-callback": 2,
         "prefer-const": 2,
+        "prefer-destructuring": [2, {"array": true, "object": true}],
         "prefer-numeric-literals": 0,
+        "prefer-promise-reject-errors": 2,
         "prefer-rest-params": 2,
         "prefer-spread": 1,
         "prefer-template": 2,
@@ -233,6 +234,7 @@
         "strict": [2, "global"],
         "symbol-description": 2,
         "template-curly-spacing": 2,
+        "template-tag-spacing": [2, "never"],
         "unicode-bom": 2,
         "use-isnan": 2,
         "valid-jsdoc": 0,
