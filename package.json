@@ -28,6 +28,7 @@
   "devDependencies": {
     "devtool": "2.3.1",
     "eslint": "3.19.0",
+    "eslint-config-innards": "0.0.1",
     "jeet": "7.1.0",
     "nib": "1.1.2",
     "pug": "2.0.0-beta11",
