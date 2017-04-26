@@ -7,7 +7,7 @@ module.exports = {
     context: `${__dirname}/js`,
     entry: `./app`,
     output: {
-        filename: `/dist/js/bundle.js`
+        filename: `dist/js/bundle.js`
     },
     devtool: `cheap-source-map`,
     plugins: [
