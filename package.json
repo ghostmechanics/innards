@@ -1,6 +1,6 @@
 {
   "name": "innards",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Bones and guts for a site",
   "repository": "ghostmechanics/innards",
   "main": "server.js",
