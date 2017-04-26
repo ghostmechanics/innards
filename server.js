@@ -10,6 +10,7 @@ const Scooter = require('scooter');
 const Vision = require('vision');
 
 const server = new Hapi.Server();
+const constants = require('./js/constants');
 const exitValue = 1;
 
 server.connection({
@@ -70,7 +71,9 @@ server.register([Scooter, {
         method: 'GET',
         path: '/',
         handler: function handler(request, reply) {
-            reply.view('index');
+            reply.view('index', {
+                constants: constants
+            });
         }
     });
 
