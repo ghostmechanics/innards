@@ -16,10 +16,10 @@
   ],
   "dependencies": {
     "blankie": "2.1.0",
-    "concurrently": "3.4.0",
+    "concurrently": "3.5.0",
     "glue": "4.1.0",
-    "hapi": "16.1.1",
-    "hapi-pino": "1.4.1",
+    "hapi": "16.4.3",
+    "hapi-pino": "1.7.0",
     "inert": "4.2.0",
     "normalize-styl": "4.1.1",
     "scooter": "4.0.0",
