@@ -52,7 +52,7 @@
     "rebuild": "npm run clean && npm run build",
     "shrink": "npm shrinkwrap && ./node_modules/.bin/shrinkydink",
     "start": "node ./server.js",
-    "start-build": "./node_modules/.bin/concurrently -p --kill-others-on-fail '[{name}]' -n 'START, BUILD' 'npm start' 'npm run build' -c 'bgBlue.bold,bgGreen.bold'"
+    "start-build": "./node_modules/.bin/concurrently --kill-others-on-fail -p '[{name}]' -n 'START, BUILD' 'npm start' 'npm run build' -c 'bgBlue.bold,bgGreen.bold'"
   },
   "author": {
     "name": "John Michel",
