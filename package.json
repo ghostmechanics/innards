@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "devtool": "2.3.1",
-    "eslint": "4.19.1",
+    "eslint": "4.18.2",
     "eslint-config-innards": "2.0.1",
     "jeet": "7.2.0",
     "nib": "1.1.2",
