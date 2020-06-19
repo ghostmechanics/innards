@@ -15,31 +15,33 @@
     "stylus"
   ],
   "dependencies": {
-    "blankie": "2.1.0",
-    "concurrently": "3.5.0",
-    "glue": "4.2.0",
-    "hapi": "16.5.2",
-    "hapi-pino": "1.7.0",
-    "inert": "4.2.1",
-    "normalize-styl": "4.1.1",
-    "scooter": "4.0.0",
-    "vision": "4.1.1"
+    "@hapi/glue": "7.0.0",
+    "@hapi/hapi": "19.1.1",
+    "@hapi/inert": "6.0.1",
+    "@hapi/scooter": "6.0.0",
+    "@hapi/vision": "6.0.0",
+    "blankie": "5.0.0",
+    "concurrently": "5.2.0",
+    "hapi-pino": "6.5.0",
+    "normalize-styl": "4.1.1"
   },
   "devDependencies": {
     "devtool": "2.3.1",
-    "eslint": "4.5.0",
-    "eslint-config-innards": "1.2.0",
-    "jeet": "7.1.0",
+    "eslint": "4.19.1",
+    "eslint-config-innards": "2.0.1",
+    "jeet": "7.2.0",
     "nib": "1.1.2",
     "pug": "2.0.0-rc.3",
-    "rimraf": "2.6.1",
+    "pug": "2.0.4",
+    "rimraf": "3.0.2",
     "rupture": "0.6.2",
     "shrinkydink": "1.0.1",
     "stylus": "0.54.5",
-    "webpack": "3.5.5"
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
   },
   "engines": {
-    "node": ">= 4.7.0 < 9",
+    "node": ">= 12",
     "npm": ">= 5"
   },
   "scripts": {

@@ -1,19 +1,18 @@
 'use strict';
 
 const Blankie = require('blankie');
-const Hapi = require('hapi');
-const Inert = require('inert');
+const Hapi = require('@hapi/hapi');
+const Inert = require('@hapi/inert');
 const Path = require('path');
 const Pino = require('hapi-pino');
 const Pug = require('pug');
-const Scooter = require('scooter');
-const Vision = require('vision');
+const Scooter = require('@hapi/scooter');
+const Vision = require('@hapi/vision');
 
-const server = new Hapi.Server();
 const constants = require('./js/constants');
 const exitValue = 1;
 
-server.connection({
+const server = new Hapi.Server({
     host: 'localhost',
     port: 13000,
     routes: {
@@ -23,27 +22,38 @@ server.connection({
     }
 });
 
-server.ext('onPreResponse', (request, reply) => {
-    if (!request.response.isBoom) {
-        return reply.continue();
-    }
+const begin = async() => {
+    await server.register([
+        {
+            plugin: Scooter
+        },
+        {
+            plugin: Blankie,
+            options: {
+                defaultSrc: 'self',
+                imgSrc: ['self', 'data:'],
+                objectSrc: 'none'
+            }
+        },
+        {
+            plugin: Inert
+        },
+        // ,
+        {
+            plugin: Pino
+        },
+        {
+            plugin: Vision
+        }], {});
 
-    return reply.view('error', request.response).code(request.response.output.statusCode);
-});
-
-server.register([Scooter, {
-    register: Blankie,
-    options: {
-        defaultSrc: 'self',
-        imgSrc: ['self', 'data:']
-    }
-}, Inert, Pino, Vision], err => {
-    if (err) {
-        console.error(err);
-        /* eslint-disable no-process-exit */
-        process.exit(exitValue);
-        /* eslint-enable */
-    }
+    // err => {
+    //     if (err) {
+    //         console.error(err);
+    //         /* eslint-disable no-process-exit */
+    //
+    //         process.exit(exitValue);
+    //         /* eslint-enable */
+    //     }
 
     server.views({
         engines: {
@@ -61,7 +71,7 @@ server.register([Scooter, {
         method: 'GET',
         path: '/{filename*}',
         handler: {
-            file: function file(request) {
+            file: (request) => {
                 return request.params.filename;
             }
         }
@@ -70,20 +80,25 @@ server.register([Scooter, {
     server.route({
         method: 'GET',
         path: '/',
-        handler: function handler(request, reply) {
-            reply.view('index', {
+        handler: (request, reply) => {
+            return reply.view('index', {
                 constants: constants
             });
         }
     });
+    // });
 
-    server.start(error => {
-        if (error) {
-            console.error(error);
-            /* eslint-disable no-process-exit */
-            process.exit(exitValue);
-            /* eslint-enable */
-        }
-        server.logger().info(` 💻  Server running at ${server.info.uri}`);
-    });
+    await server.start();
+
+    server.logger().info(` 💻  Server running at ${server.info.uri}`);
+};
+
+server.ext('onPreResponse', async(request, reply) => {
+    if (!request.response.isBoom) {
+        return reply.continue;
+    }
+
+    return reply.view('error', request.response).code(request.response.output.statusCode);
 });
+
+begin();
