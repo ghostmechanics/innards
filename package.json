@@ -26,7 +26,6 @@
     "normalize-styl": "4.1.1"
   },
   "devDependencies": {
-    "devtool": "2.3.1",
     "eslint": "4.19.1",
     "eslint-config-innards": "2.0.1",
     "jeet": "7.2.0",
@@ -48,7 +47,7 @@
     "build-css": "stylus -c -u ./node_modules/nib -u ./node_modules/jeet -u ./node_modules/rupture css/styles.styl",
     "build-js": "webpack --progress --watch",
     "clean": "./node_modules/.bin/rimraf dist",
-    "debug": "./node_modules/.bin/devtool server.js",
+    "debug": "node --inspect-brk server.js",
     "lint": "./node_modules/.bin/eslint ./js ./hooks --cache",
     "rebuild": "npm run clean && npm run build",
     "shrink": "npm shrinkwrap && ./node_modules/.bin/shrinkydink",
