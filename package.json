@@ -30,7 +30,7 @@
     "eslint-config-innards": "2.0.1",
     "jeet": "7.2.0",
     "nib": "1.1.2",
-    "pug": "2.0.4",
+    "pug": "3.0.1",
     "rimraf": "3.0.2",
     "rupture": "0.6.2",
     "shrinkydink": "1.0.1",
